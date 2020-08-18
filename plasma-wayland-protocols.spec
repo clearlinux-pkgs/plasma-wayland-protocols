@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xA744CDAFDBE1D719 (aleixpol@kde.org)
 #
 Name     : plasma-wayland-protocols
-Version  : 1.0
-Release  : 1
-URL      : https://download.kde.org/stable/plasma-wayland-protocols/1.0/plasma-wayland-protocols-1.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma-wayland-protocols/1.0/plasma-wayland-protocols-1.0.tar.xz
-Source1  : https://download.kde.org/stable/plasma-wayland-protocols/1.0/plasma-wayland-protocols-1.0.tar.xz.sig
+Version  : 1.1.1
+Release  : 2
+URL      : https://download.kde.org/stable/plasma-wayland-protocols/1.1.1/plasma-wayland-protocols-1.1.1.tar.xz
+Source0  : https://download.kde.org/stable/plasma-wayland-protocols/1.1.1/plasma-wayland-protocols-1.1.1.tar.xz
+Source1  : https://download.kde.org/stable/plasma-wayland-protocols/1.1.1/plasma-wayland-protocols-1.1.1.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1 LGPL-3.0
@@ -54,15 +54,15 @@ license components for the plasma-wayland-protocols package.
 
 
 %prep
-%setup -q -n plasma-wayland-protocols-1.0
-cd %{_builddir}/plasma-wayland-protocols-1.0
+%setup -q -n plasma-wayland-protocols-1.1.1
+cd %{_builddir}/plasma-wayland-protocols-1.1.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591740226
+export SOURCE_DATE_EPOCH=1597710731
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -74,15 +74,15 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1591740226
+export SOURCE_DATE_EPOCH=1597710731
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols
-cp %{_builddir}/plasma-wayland-protocols-1.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/9a1929f4700d2407c70b507b3b2aaf6226a9543c
-cp %{_builddir}/plasma-wayland-protocols-1.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/plasma-wayland-protocols-1.1.1/COPYING.LIB %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/plasma-wayland-protocols-1.1.1/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -106,6 +106,7 @@ popd
 /usr/share/plasma-wayland-protocols/plasma-virtual-desktop.xml
 /usr/share/plasma-wayland-protocols/plasma-window-management.xml
 /usr/share/plasma-wayland-protocols/remote-access.xml
+/usr/share/plasma-wayland-protocols/screencast.xml
 /usr/share/plasma-wayland-protocols/server-decoration-palette.xml
 /usr/share/plasma-wayland-protocols/server-decoration.xml
 /usr/share/plasma-wayland-protocols/shadow.xml
