@@ -6,7 +6,7 @@
 #
 Name     : plasma-wayland-protocols
 Version  : 1.4.0
-Release  : 5
+Release  : 6
 URL      : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.4.0.tar.xz
 Source0  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.4.0.tar.xz
 Source1  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.4.0.tar.xz.sig
