@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xA744CDAFDBE1D719 (aleixpol@kde.org)
 #
 Name     : plasma-wayland-protocols
-Version  : 1.4.0
-Release  : 6
-URL      : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.4.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.4.0.tar.xz
-Source1  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.4.0.tar.xz.sig
+Version  : 1.5
+Release  : 7
+URL      : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.5.tar.xz
+Source1  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.1 LGPL-3.0 MIT
@@ -54,15 +54,15 @@ license components for the plasma-wayland-protocols package.
 
 
 %prep
-%setup -q -n plasma-wayland-protocols-1.4.0
-cd %{_builddir}/plasma-wayland-protocols-1.4.0
+%setup -q -n plasma-wayland-protocols-1.5
+cd %{_builddir}/plasma-wayland-protocols-1.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1634315539
+export SOURCE_DATE_EPOCH=1636121916
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -78,17 +78,17 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1634315539
+export SOURCE_DATE_EPOCH=1636121916
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols
-cp %{_builddir}/plasma-wayland-protocols-1.4.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/9a1929f4700d2407c70b507b3b2aaf6226a9543c
-cp %{_builddir}/plasma-wayland-protocols-1.4.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
-cp %{_builddir}/plasma-wayland-protocols-1.4.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/3c3d7573e137d48253731c975ecf90d74cfa9efe
-cp %{_builddir}/plasma-wayland-protocols-1.4.0/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/6f1f675aa5f6a2bbaa573b8343044b166be28399
-cp %{_builddir}/plasma-wayland-protocols-1.4.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/plasma-wayland-protocols-1.4.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/plasma-wayland-protocols-1.4.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/plasma-wayland-protocols-1.4.0/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/a0193e3fccf86c17dc71e3f6c0ac0b535e06bea3
+cp %{_builddir}/plasma-wayland-protocols-1.5/COPYING.LIB %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/plasma-wayland-protocols-1.5/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/plasma-wayland-protocols-1.5/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/plasma-wayland-protocols-1.5/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/6f1f675aa5f6a2bbaa573b8343044b166be28399
+cp %{_builddir}/plasma-wayland-protocols-1.5/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/plasma-wayland-protocols-1.5/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/plasma-wayland-protocols-1.5/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/plasma-wayland-protocols-1.5/LICENSES/MIT.txt %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/a0193e3fccf86c17dc71e3f6c0ac0b535e06bea3
 pushd clr-build
 %make_install
 popd
