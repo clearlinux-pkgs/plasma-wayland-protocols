@@ -1,5 +1,5 @@
 PKG_NAME := plasma-wayland-protocols
-URL = https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.8.0.tar.xz
+URL = https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.9.0.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common

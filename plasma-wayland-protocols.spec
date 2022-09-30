@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xA744CDAFDBE1D719 (aleixpol@kde.org)
 #
 Name     : plasma-wayland-protocols
-Version  : 1.8.0
-Release  : 10
-URL      : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.8.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.8.0.tar.xz
-Source1  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.8.0.tar.xz.sig
+Version  : 1.9.0
+Release  : 11
+URL      : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.9.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.9.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.9.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause CC0-1.0 LGPL-2.1 MIT
@@ -54,15 +54,15 @@ license components for the plasma-wayland-protocols package.
 
 
 %prep
-%setup -q -n plasma-wayland-protocols-1.8.0
-cd %{_builddir}/plasma-wayland-protocols-1.8.0
+%setup -q -n plasma-wayland-protocols-1.9.0
+cd %{_builddir}/plasma-wayland-protocols-1.9.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1662499562
+export SOURCE_DATE_EPOCH=1664549195
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -78,7 +78,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1662499562
+export SOURCE_DATE_EPOCH=1664549195
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols
 cp %{_builddir}/plasma-wayland-protocols-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/9a1929f4700d2407c70b507b3b2aaf6226a9543c || :
