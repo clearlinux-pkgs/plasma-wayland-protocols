@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xA744CDAFDBE1D719 (aleixpol@kde.org)
 #
 Name     : plasma-wayland-protocols
-Version  : 1.9.0
-Release  : 11
-URL      : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.9.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.9.0.tar.xz
-Source1  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.9.0.tar.xz.sig
+Version  : 1.10.0
+Release  : 12
+URL      : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.10.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.10.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.10.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause CC0-1.0 LGPL-2.1 MIT
@@ -20,6 +20,9 @@ BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules-data
 BuildRequires : pkg-config
 BuildRequires : pkgconfig(wayland-protocols)
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 # Plasma Wayland Protocols
@@ -54,31 +57,31 @@ license components for the plasma-wayland-protocols package.
 
 
 %prep
-%setup -q -n plasma-wayland-protocols-1.9.0
-cd %{_builddir}/plasma-wayland-protocols-1.9.0
+%setup -q -n plasma-wayland-protocols-1.10.0
+cd %{_builddir}/plasma-wayland-protocols-1.10.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1664549195
+export SOURCE_DATE_EPOCH=1674860612
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1664549195
+export SOURCE_DATE_EPOCH=1674860612
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols
 cp %{_builddir}/plasma-wayland-protocols-%{version}/COPYING.LIB %{buildroot}/usr/share/package-licenses/plasma-wayland-protocols/9a1929f4700d2407c70b507b3b2aaf6226a9543c || :
@@ -105,6 +108,7 @@ popd
 /usr/share/plasma-wayland-protocols/kde-lockscreen-overlay-v1.xml
 /usr/share/plasma-wayland-protocols/kde-output-device-v2.xml
 /usr/share/plasma-wayland-protocols/kde-output-management-v2.xml
+/usr/share/plasma-wayland-protocols/kde-output-order-v1.xml
 /usr/share/plasma-wayland-protocols/kde-primary-output-v1.xml
 /usr/share/plasma-wayland-protocols/keystate.xml
 /usr/share/plasma-wayland-protocols/output-management.xml
