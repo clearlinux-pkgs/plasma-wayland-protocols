@@ -9,7 +9,7 @@
 #
 Name     : plasma-wayland-protocols
 Version  : 1.13.0
-Release  : 19
+Release  : 20
 URL      : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.13.0.tar.xz
 Source0  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.13.0.tar.xz
 Source1  : https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.13.0.tar.xz.sig
